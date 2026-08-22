@@ -1,0 +1,118 @@
+.mfz-container {
+  --mfz-toolbar-size: 30px;
+  position: relative;
+  width: 100%;
+  min-width: 240px;
+  min-height: 220px;
+  height: auto;
+  max-height: 72vh;
+  margin: 0.75rem 0;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  background: var(--background-primary);
+  overflow: hidden;
+  resize: both;
+  box-sizing: border-box;
+}
+
+.mfz-container.is-focused {
+  border-color: var(--interactive-accent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--interactive-accent) 60%, transparent);
+}
+
+.mfz-viewport {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.mfz-viewport:active {
+  cursor: grabbing;
+}
+
+.mfz-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+
+.mfz-content svg {
+  display: block;
+  max-width: none;
+  height: auto;
+  overflow: visible;
+}
+
+.mfz-toolbar {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--background-primary) 92%, transparent);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  opacity: 0.92;
+  backdrop-filter: blur(8px);
+}
+
+.mfz-toolbar button {
+  width: var(--mfz-toolbar-size);
+  height: var(--mfz-toolbar-size);
+  padding: 0;
+  border-radius: 6px;
+  font-size: 16px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mfz-help {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  z-index: 1;
+  max-width: calc(100% - 16px);
+  padding: 3px 7px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--background-primary) 88%, transparent);
+  color: var(--text-muted);
+  font-size: 11px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 120ms ease;
+}
+
+.mfz-container:hover .mfz-help,
+.mfz-container.is-focused .mfz-help {
+  opacity: 0.86;
+}
+
+@media (max-width: 640px) {
+  .mfz-container {
+    min-height: 260px;
+    height: auto;
+    resize: vertical;
+  }
+
+  .mfz-help {
+    display: none;
+  }
+}
+
+.mfz-container.mfz-kind-sequence {
+  min-height: 300px;
+}
+
+.mfz-container.mfz-kind-sequence .mfz-help::after {
+  content: "；时序图默认按宽度适配，纵向可拖拽查看";
+}

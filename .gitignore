@@ -1,0 +1,85 @@
+# 压缩包文件（你特别要求的）
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+*.tgz
+*.bz2
+*.xz
+
+# 编译输出和临时文件
+*.exe
+*.dll
+*.so
+*.dylib
+*.class
+*.pyc
+*.pyo
+*.pyd
+*.o
+*.obj
+*.a
+*.lib
+*.out
+*.tmp
+*.temp
+
+# 日志文件
+*.log
+*.log.*
+
+# IDE 和编辑器配置（避免个人设置污染）
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# 构建和依赖目录
+node_modules/
+vendor/
+packages/
+*.cache
+*.lock  # 酌情保留，但通常不提交 package-lock.json 除外
+
+# 环境变量和敏感配置
+.env
+.env.*
+!.env.example
+*.secret
+*.key
+*.pem
+
+# 测试和覆盖率报告
+coverage/
+*.test
+*.spec
+*.xml
+
+# 操作系统生成的文件
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# 备份文件
+*.bak
+*.backup
+*.old
+*.orig
+
+# 项目特定的临时文件（根据你所用技术栈可自行增删）
+*.sdf
+*.opensdf
+*.opendb
+*.dbmdl
+*.cachefile
+*.VC.db
+*.VC.VC.opendb

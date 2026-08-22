@@ -1,0 +1,9 @@
+{
+  "id": "mermaid-window",
+  "name": "Mermaid Window",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "description": "Mermaid 图缩放/平移，并可一键在独立窗口打开（窗口可拖动到其他显示器，滚轮缩放、拖拽平移、Esc/✕ 关闭）。基于 Mermaid Flow Zoom 修改。",
+  "author": "local",
+  "isDesktopOnly": true
+}
