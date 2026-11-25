@@ -9,7 +9,7 @@
   margin: 0.75rem 0;
   border: 1px solid var(--background-modifier-border);
   border-radius: 8px;
-  background: var(--background-primary);
+  background: var(--pele-bg, var(--background-primary));
   overflow: hidden;
   resize: both;
   box-sizing: border-box;
@@ -41,11 +41,27 @@
   will-change: transform;
 }
 
-.mfz-content svg {
+/* 现在包装的是 .mermaid 节点，SVG 留在原来的宿主中，主题变量和 Pele 的
+   重绘逻辑都能继续正常工作。 */
+.mfz-content > .mermaid,
+.mfz-content > .mermaid-rendered {
+  margin: 0 !important;
+  max-width: none !important;
+  overflow: visible !important;
+}
+
+.mfz-content > .mermaid > svg,
+.mfz-content > .mermaid-rendered > svg,
+.mfz-content > svg {
   display: block;
   max-width: none;
   height: auto;
   overflow: visible;
+}
+
+/* Obsidian 1.15 自带 Pele 缩放按钮；插件已有自己的工具栏，隐藏它避免重叠。 */
+.mfz-container .pele-zoom {
+  display: none !important;
 }
 
 .mfz-toolbar {
